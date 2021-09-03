@@ -37,6 +37,7 @@ li{
   text-align:left;
   color: #ecf0f1;
 }
+
 li:before{
   content:'//';
   display: inline;
@@ -53,6 +54,11 @@ button{
 .form,
 .greetings {
   display: none;
+}
+
+.name {
+  font-size: 15px;
+  font-style: italic;
 }
 
 .showing{
