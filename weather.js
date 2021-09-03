@@ -22,7 +22,7 @@ function saveCoords(coordsObj){
     localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
-// 위치청보를 얻어왔을 때 위도경도 저장하고, 날씨 가져오기
+// 위치청보를 얻어왔을 때 위도경도 저장, 날씨 가져오기
 function handleGeoSuccess(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -34,7 +34,7 @@ function handleGeoSuccess(position){
     getWeather(latitude, latitude);
 }
 
-// 위치정보 얻는거 실패했을 때 로그찍기
+// 위치정보 얻는거 실패했을 때
 function handleGeoFail(positon){
     console.log('Cant access geo location');
 }
