@@ -35,16 +35,7 @@ function paintGreeting(text) {
     const date = new Date();
     const hours = date.getHours();
     let mention = 'Hello';
-    if(0<= hours && hours <= 4 || 20 < hours){
-        // 시간이 0시~4시 이거나 20시 넘으면 굿나잇
-        mention = 'Good night';
-    } else if (hours<12){
-        // 시간이 5시~12시이면 굿모닝
-        mention = 'Good morning';
-    } else{
-        // 13시부터 20시까지는 굿애프터눈
-        mention = 'Good afternoon';
-    }
+   
     // js-greeting에 innerText 넣어주기
     greeting.innerText = `${mention}, ${text}.`;
 }
