@@ -1,15 +1,15 @@
-// document에서 html 태그로 js-toDoForm의 input과 js-toDoList 가져오기
+/* document에서 html 태그로 js-toDoForm의 input과 js-toDoList 가져오기 */
 const toDoForm = document.querySelector(".js-toDoForm"),
     toDoInput = toDoForm.querySelector("input"),
     toDoList = document.querySelector(".js-toDoList");
 
-// toDo list
+/* toDo list */
 const TODOS_LS = 'toDos';
 
-// toDo를 추가 삭제 해줘야 하기때문에 let으로 선언
+/* toDo를 추가 삭제 해줘야 하기때문에 let으로 선언 */
 let toDos = [];
 
-// todo 삭제하기
+/* todo 삭제하기 */
 function deleteToDo(event){
     const btn = event.target;
     const li = btn.parentNode;
@@ -21,12 +21,12 @@ function deleteToDo(event){
     saveToDos();
 }
 
-// todo localStorage에 저장하기
+/* todo localStorage에 저장하기 */
 function saveToDos(){
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
-// localStorage 에서 todo 불러오기
+/* localStorage 에서 todo 불러오기 */
 function loadToDos(){
     const toDosLoaded = localStorage.getItem(TODOS_LS);
     if(toDosLoaded !== null){
@@ -37,7 +37,7 @@ function loadToDos(){
     }
 }
 
-// todo list 생성 및 출력하기
+/* todo list 생성 및 출력하기 */
 function paintToDo(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
@@ -59,7 +59,7 @@ function paintToDo(text){
     saveToDos();
 }
 
-// toDoForm 을 제출하면, 값을 받아와서 리스트로 만들기
+/* toDoForm 을 제출하면, 값을 받아와서 리스트로 만들기 */
 function handleSubmit(event){
     event.preventDefault();
     const currentValue = toDoInput.value;
@@ -67,7 +67,7 @@ function handleSubmit(event){
     toDoInput.value = "";
 }
 
-// 페이지 로드 시 저장된 걸 불러오고, 이벤트를 처리함
+/* 페이지 로드 시 저장된 걸 불러오고, 이벤트를 처리함 */
 function init(){
     loadToDos();
     toDoForm.addEventListener("submit", handleSubmit);
