@@ -11,7 +11,7 @@ function genRandom(){
 /* 랜덤 이미지 출력 */
 function paintImage(imgNumber) {
     const img = new Image();
-    img.src = `assets/${imgNumber}.jpg`;
+    img.src = `img/${imgNumber}.jpg`;
     img.classList.add("bgImg");
     body.prepend(img);
 }
